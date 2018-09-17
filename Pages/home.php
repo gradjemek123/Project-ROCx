@@ -13,3 +13,13 @@ App::pageAuth(['user'], "login");
 // dd($user);
 ?>
 
+<div class:"container">
+	<table content="width=device-width" style="margin:80px auto; margin-left:20px;" class="table table-striped">
+		<thead>
+			<tr>
+		        <th>Materiaal</th>
+		        <th>Aantal</th>
+		    </tr>
+		</thead>
+	</table>
+</div>
