@@ -14,47 +14,45 @@ App::pageAuth(['user'], "login");
 ?>
 <form action="">
 	<div class:"container">
-		<table content="width=device-width" style="margin:80px auto; margin-left:20px;" class="table table-striped">
+		<table content="width=device-width" style="margin:20px; margin-left:20px;" class="table table-striped">
 			<thead>
 				<tr>
 			        <th>Materiaal</th>
 			        <th>Aantal</th>
 			    </tr>
-			<tbody>
-	      		<tr>
-			        <td>PC's</td>
-			        <td><input type="number" name="quantity" min="0" max="20"></td>
-	      		</tr>
-	      		<tr>
-			        <td><img src="images/pc.png" width="50px" height="50px"> Beeldschermen</td>
-			        <td><input type="number" name="quantity" min="0" max="20"></td>
-	      		</tr>
-	      		<tr>
-			        <td>Voedingskabels</td>
-			        <td><input type="number" name="quantity" min="0" max="20"></td>
-	      		</tr>
-	      		<tr>
-			        <td>Adapters</td>
-			        <td><input type="number" name="quantity" min="0" max="20"></td>
-	      		</tr>
-	      		<tr>
-			        <td>HDMI</td>
-			        <td><input type="number" name="quantity" min="0" max="20"></td>
-	      		</tr>
-	      		<tr>
-			        <td>Muizen</td>
-			        <td><input type="number" name="quantity" min="0" max="20"></td>
-	      		</tr>
-	      		<tr>
-			        <td>Toetsenborden</td>
-			        <td><input type="number" name="quantity" min="0" max="20"></td>
-	      		</tr>
+				<tbody>
+		      		<tr>
+				        <td><img src="images/gra.png" width="50px" height="50px"> PC's</td>
+				        <td><input type="number" name="quantity" min="0" max="20"></td>
+		      		</tr>
+		      		<tr>
+				        <td><img src="images/pc.png" width="50px" height="50px"> Beeldschermen</td>
+				        <td><input type="number" name="quantity" min="0" max="20"></td>
+		      		</tr>
+		      		<tr>
+				        <td><img src="images/kabel.jpg" width="50px" height="50px"> Voedingskabels</td>
+				        <td><input type="number" name="quantity" min="0" max="20"></td>
+		      		</tr>
+		      		<tr>
+				        <td><img src="images/adapter.png" width="50px" height="50px"> Adapters</td>
+				        <td><input type="number" name="quantity" min="0" max="20"></td>
+		      		</tr>
+		      		<tr>
+				        <td><img src="images/hmdi.png" width="50px" height="50px"> HDMI</td>
+				        <td><input type="number" name="quantity" min="0" max="20"></td>
+		      		</tr>
+		      		<tr>
+				        <td><img src="images/mouse.png" width="50px" height="50px"> Muizen</td>
+				        <td><input type="number" name="quantity" min="0" max="20"></td>
+		      		</tr>
+		      		<tr>
+				        <td><img src="images/keyboard.png" width="50px" height="50px"> Toetsenborden</td>
+				        <td><input type="number" name="quantity" min="0" max="20"></td>
+		      		</tr>
 
-	    </tbody>
+		    	</tbody>
 			</thead>
 		</table>
+			   <button type="button" class="btn btn-dark">Reserveren</button> 
 </div>
-
-
-
 </form>
