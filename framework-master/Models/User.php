@@ -98,7 +98,7 @@ class User extends Model
         $user->lastname = $form['lastname'];
         $user->save();
         if($user->getId()) {
-            // App::setLoggedInUser($user);
+            App::setLoggedInUser($user);
             return $user;
         } else {
             return false;

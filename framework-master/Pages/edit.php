@@ -1,24 +1,19 @@
 <?php
 
-App::pageAuth([App::ROLE_ADMIN]);
+App::pageAuth(['user'], "login");
 
 if (isset($_POST['email'])) {
-    //
-    $user = User::register($_POST);
-    //
-    if ($user) {
-        App::redirect('home');
-    }
+    User::updateUser($_POST);
 }
 ?>
 
 <div class="container">
     <div class="card card-model card-model-sm">
         <div class="card-header">
-            Register
+            Update
         </div>
         <div class="card-body">
-            <?= User::registerForm(); ?>
+            <?= User::editUserForm(); ?>
         </div>
     </div>
 </div>
