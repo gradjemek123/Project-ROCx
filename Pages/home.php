@@ -26,7 +26,7 @@ App::pageAuth(['user'], "login");
 			        <td><input type="number" name="quantity" min="0" max="20"></td>
 	      		</tr>
 	      		<tr>
-			        <td>Schermen</td>
+			        <td><img src="images/pc.png" width="50px" height="50px"> Beeldschermen</td>
 			        <td><input type="number" name="quantity" min="0" max="20"></td>
 	      		</tr>
 	      		<tr>
@@ -38,7 +38,7 @@ App::pageAuth(['user'], "login");
 			        <td><input type="number" name="quantity" min="0" max="20"></td>
 	      		</tr>
 	      		<tr>
-			        <td>HMDI</td>
+			        <td>HDMI</td>
 			        <td><input type="number" name="quantity" min="0" max="20"></td>
 	      		</tr>
 	      		<tr>
