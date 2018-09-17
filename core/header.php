@@ -10,7 +10,9 @@
 
         <?php if(App::checkAuth(App::ROLE_GUEST)){?>
             <a class="p-2 text-dark" <?= App::link('login') ?>>Login</a>
-            <a class="p-2 text-dark" <?= App::link('register') ?>>Register</a>
+        <?php } elseif(App::checkAuth(App::ROLE_ADMIN)){?>
+            <a class="p-2 text-dark" <?= App::link('register') ?>>New User</a>
+            <a class="p-2 text-dark" <?= App::link('logout') ?>>Logout</a>
         <?php } else { ?>
             <a class="p-2 text-dark" <?= App::link('logout') ?>>Logout</a>
         <?php } ?>
