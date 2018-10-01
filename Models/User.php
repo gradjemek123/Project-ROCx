@@ -88,7 +88,12 @@ class User extends Model
     public static function register($form)
     {
         if($form['password'] !== $form['repeat']) App::addError("passwords do not match");
-        if(strlen($form['password']) < 8) App::addError("password is too short");
+        if(strlen($form['password']) < 8)  return false.App::addError("password is too short");
+                   
+    
+
+
+        
 
         $user = new User();
         $user->email = $form['email'];
@@ -125,9 +130,10 @@ class User extends Model
 
     public static function updateUser($form)
     {
-        $user = self::findById(App::$user->id);
+        $user = self::findById($form['id']);
         $user->firstname = $form['firstname'];
         $user->lastname = $form['lastname'];
+        $user->docentnummer = $form['docentnummer'];
 
         if ( !!$_FILES['image']['tmp_name']) {
             $fileParts = pathinfo($_FILES['image']['name']);
@@ -198,13 +204,17 @@ class User extends Model
             ->placeholder("Last name")
             ->required());
 
+        $form->addField((new FormField("docentnummer"))
+            ->placeholder("Docent nummer")
+            ->required());
+
         return $form->getHTML();
     }
 
 
-    public static function editUserForm()
+    public static function editUserForm($id)
     {
-        $user = User::findById(App::$user->id);
+        $user = User::findById($id);
 
         $form = new Form();
 
@@ -212,6 +222,11 @@ class User extends Model
             ->type("email")
             ->placeholder("E-mail")
             ->value($user->email)
+            ->required());
+
+        $form->addField((new FormField("id"))
+            ->type("hidden")
+            ->value($user->id)
             ->required());
 
         $form->addField((new FormField("image"))
@@ -227,6 +242,12 @@ class User extends Model
         $form->addField((new FormField("lastname"))
             ->placeholder("Last name")
             ->value($user->lastname)
+            ->required());
+
+
+        $form->addField((new FormField("docentnummer"))
+            ->placeholder("Docent nummer")
+            ->value($user->docentnummer)
             ->required());
 
         return $form->getHTML();
