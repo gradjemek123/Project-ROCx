@@ -1,6 +1,6 @@
 <?php
 
-App::pageAuth(['user'], "login");
+App::pageAuth(['admin'], "login");
 
 if (isset($_POST['email'])) {
     User::updateUser($_POST);
@@ -13,7 +13,7 @@ if (isset($_POST['email'])) {
             Update
         </div>
         <div class="card-body">
-            <?= User::editUserForm(); ?>
+            <?= User::editUserForm($_GET['id']); ?>
         </div>
     </div>
 </div>

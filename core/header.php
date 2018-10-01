@@ -9,7 +9,7 @@
         <?php } ?>
 
         <?php if(App::checkAuth(App::ROLE_ADMIN)){ ?>
-            <a class="p-2 text-dark" <?= App::link('register') ?>>Register</a>
+            <a class="p-2 text-dark" <?= App::link('Accountmanagement') ?>>Account management</a>
         <?php } ?>
 
         <?php if(App::checkAuth(App::ROLE_GUEST)){?>
