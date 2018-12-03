@@ -1,58 +1,24 @@
 <?php
 
-App::pageAuth(['user'], "login");
+App::pageAuth([App::ROLE_USER], "login");
 
-// Example to get user
-// $user = User::findById(1);
-
-// same as above, but different
-// $user = DB::getInstance()->prepare('SELECT * FROM users WHERE id = :id');
-// $user->execute(['id' => 1]);
-// $user = $user->fetchAll(PDO::FETCH_CLASS, 'User');
-
-// dd($user);
+if (isset($_POST['user_id'])) {
+    //
+    $reservation = Reservation::addReservation($_POST);
+    //
+    if ($reservation) {
+        App::redirect('home');
+    }
+}
 ?>
-<form action="">
-	<div class:"container">
-		<table content="width=device-width" style="margin:20px; margin-left:20px;" class="table table-striped">
-			<thead>
-				<tr>
-			        <th>Materiaal</th>
-			        <th>Aantal</th>
-			    </tr>
-				<tbody>
-		      		<tr>
-				        <td><img src="images/gra.png" width="48px" height="50px"> PC's</td>
-				        <td><input type="number" name="quantity" value="0" min="0" max="20"></td>
-		      		</tr>
-		      		<tr>
-				        <td><img src="images/pc.png" width="48px" height="50px"> Beeldschermen</td>
-				        <td><input type="number" name="quantity" value="0" min="0" max="20"></td>
-		      		</tr>
-		      		<tr>
-				        <td><img src="images/kabel.jpg" width="48px" height="50px"> Voedingskabels</td>
-				        <td><input type="number" name="quantity" value="0" min="0" max="20"></td>
-		      		</tr>
-		      		<tr>
-				        <td><img src="images/adapter.png" width="48px" height="50px"> Adapters</td>
-				        <td><input type="number" name="quantity" value="0" min="0" max="20"></td>
-		      		</tr>
-		      		<tr>
-				        <td><img src="images/hmdi.png" width="50px" height="50px"> HDMI</td>
-				        <td><input type="number" name="quantity" value="0" min="0" max="20"></td>
-		      		</tr>
-		      		<tr>
-				        <td><img src="images/mouse.png" width="50px" height="50px"> Muizen</td>
-				        <td><input type="number" name="quantity" value="0" min="0" max="20"></td>
-		      		</tr>
-		      		<tr>
-				        <td><img src="images/keyboard.png" width="50px" height="50px"> Toetsenborden</td>
-				        <td><input type="number" name="quantity" value="0" min="0" max="20"></td>
-		      		</tr>
 
-		    	</tbody>
-			</thead>
-		</table>
-			   <button type="button" class="btn btn-dark">Reserveren</button> 
+<div class="container">
+    <div class="card card-model card-model-sm">
+        <div class="card-header">
+            Register
+        </div>
+        <div class="card-body">
+            <?= Reservation::reservationForm(); ?>
+        </div>
+    </div>
 </div>
-</form>

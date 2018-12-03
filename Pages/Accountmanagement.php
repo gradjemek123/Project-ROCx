@@ -21,8 +21,8 @@ $users = User::get();
 	   echo '<div style="border: solid grey 2px"; class="col-sm-8">'. $user->firstname . " " . $user->lastname . " " . $user->docentnummer;?>
 
 	       <a <?= App::link('edit&id=' . $user->id) ?> style="margin:10px; width:50px; height:35px;" class="btn btn-dark">Edit</a>
-	       <a <?= App::link('Accountmanagement&delete='.$user->id) ?> style="margin:10px; width:70px; height:35px;" class="btn btn-dark">Delete</a>
-
+	       <a <?= App::link('accountmanagement&delete='.$user->id) ?> style="margin:10px; width:70px; height:35px;" class="btn btn-dark">Delete</a>
+	       <a <?= App::link('overzicht&id='. $user->id) ?> style="margin:10px; width:120px; height:35px;" class="btn btn-dark">Reservering</a>
 
 </div>
 

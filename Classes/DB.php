@@ -9,7 +9,7 @@ class DB
     private $servername = "localhost";
     private $username = "root";
     private $password = "";
-    private $database = "project-rocx";
+    private $database = "mydb";
 
     private $existingTables = [];
 
