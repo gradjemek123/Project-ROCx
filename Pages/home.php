@@ -2,12 +2,13 @@
 
 App::pageAuth([App::ROLE_USER], "login");
 
-if (isset($_POST['user_id'])) {
+
+if (isset($_POST['teruggave'])) {
     //
     $reservation = Reservation::addReservation($_POST);
     //
     if ($reservation) {
-        App::redirect('home');
+        App::redirect('succes');
     }
 }
 ?>

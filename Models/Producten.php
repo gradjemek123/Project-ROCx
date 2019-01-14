@@ -1,9 +1,9 @@
 <?php
 
-class Reservation extends Model
+class Producten extends Model
 {
     // Set the table name
-    protected $table = 'reservaties';
+    protected $table = 'producten';
 
     // Define the properties here. Make them 'protected' and add a docblock
     /**
@@ -12,9 +12,9 @@ class Reservation extends Model
     protected $id;
 
     /**
-     * @Type varchar(10)
+     * @Type varchar(255)
      */
-    protected $lening;
+    protected $name;
 
     /**
      * @Type varchar(10)
@@ -66,7 +66,7 @@ class Reservation extends Model
         $reservation->teruggave = $newteruggave;
         $reservation->users_id = App::$user->id;
         $reservation->pc = $form['pc'];
-        $reservation->producten_id = App::$producten->id;
+        $reservation->producten_id = $form['producten_id'];
          // $reservation->beeldscherm = $form['beeldscherm'];
         // $reservation->voedingskabel = $form['voedingskabel'];
         // $reservation->adapter = $form['adapter'];
@@ -88,41 +88,11 @@ class Reservation extends Model
 
         $form->addField((new FormField('pc'))
             ->type("number")
-            ->placeholder('<img src="images/pcs.png" width="48px" height="50px"> PCs'));
+            ->placeholder('<img src="images/gra.png" width="48px" height="50px"> PCs'));
 
         $form->addField((new FormField('HDMI kabel'))
             ->type("number")
-            ->placeholder('<img src="images/hdmi.png" width="48px" height="50px"> HDMI kabel'));
-
-
-        $form->addField((new FormField('adapter'))
-            ->type("number")
-            ->placeholder('<img src="images/adapter.png" width="48px" height="50px"> Adapter'));
-
-
-        $form->addField((new FormField('kabel'))
-            ->type("number")
-            ->placeholder('<img src="images/kabel.jpg" width="48px" height="50px"> Kabel s'));
-
-
-        $form->addField((new FormField('keyboard'))
-            ->type("number")
-            ->placeholder('<img src="images/keyboard.png" width="48px" height="50px"> Toetsenbord'));
-
-
-        $form->addField((new FormField('mouse'))
-            ->type("number")
-            ->placeholder('<img src="images/mouse.png" width="48px" height="50px"> Muis'));
-
-
-        $form->addField((new FormField('monitor'))
-            ->type("number")
-            ->placeholder('<img src="images/monitor.png" width="48px" height="50px"> Monitor'));
-
-
-
-
-
+            ->placeholder('<img src="images/hdmi.png" width="48px" height="50px"> HDMI'));
 
 
         $form->addField((new FormField("lening"))
